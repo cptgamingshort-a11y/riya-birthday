@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito+Sans:wght@400;500;600;700;800&display=swap");0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap");
 :root {
   color-scheme: dark;
   --bg: #20151f;
@@ -1004,3 +1004,53 @@ body { background: #fff0ed; }
 @media (max-width: 600px) { .welcome h1 em { font-style: normal; } .welcome-copy { padding-top: 22px; } .party-flags { height: 25px; } .party-flags i { width: 17px; height: 20px; } .party-flags i:nth-child(2n) { height: 16px; } }
 @media (max-height: 650px) and (max-width: 600px) { .welcome-copy { padding-top: 16px; } .welcome h1 { margin: 5px 0; } .name-pill { margin-top: 6px; } .welcome { gap: 12px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* Hand-decorated strawberry cake: frosting, filling and a porcelain stand. */
+.cake { isolation: isolate; width: 270px; height: 228px; margin-top: 32px; animation: cake-arrive .8s cubic-bezier(.22,1,.36,1) both; }
+.candles { left: 20px; right: 20px; top: 2px; }
+.candle:before { width: 10px; border-radius: 3px 3px 1px 1px; box-shadow: inset -2px 0 2px #7a36542e; background: repeating-linear-gradient(38deg,#dc7898 0 5px,#fff6ec 5px 11px); }
+.flame { background: radial-gradient(ellipse at 50% 80%,#fff9d0 0 22%,#ffd37a 50%,#f2a34e 100%); box-shadow: 0 0 13px #ffc769a8,0 0 28px #ffda8c59; }
+.icing { top: 52px; left: 20px; width: 230px; height: 38px; background: radial-gradient(ellipse at 45% 35%,#fffdf3,#ffe4d9); border: 2px solid #fff6ea; box-shadow: 0 4px 0 #dc9bb13b; z-index: 2; }
+.icing:before { content: ''; position: absolute; inset: 5px 10px; border: 2px dashed #edb5bd80; border-radius: 50%; }
+.cream-drips { position: absolute; top: 23px; left: -2px; width: 230px; height: 21px; border-radius: 0 0 22px 18px; background: #ffece2; }
+.cream-drips:before, .cream-drips:after { content: ''; position: absolute; top: 8px; width: 19px; height: 30px; border-radius: 0 0 14px 14px; background: #ffece2; }
+.cream-drips:before { left: 30px; box-shadow: 65px -9px 0 -2px #ffece2,130px -4px 0 #ffece2; }
+.cream-drips:after { right: 21px; height: 17px; width: 12px; }
+.cake-body { top: 72px; left: 20px; width: 230px; height: 122px; padding-top: 20px; border-radius: 0 0 25px 25px; background: linear-gradient(90deg,#cf819f,#eaaec1 30%,#f1bfd0 54%,#d98da8); border-bottom: 8px solid #ba718c; box-shadow: inset 0 -20px 0 #e3a2b940,inset 4px 0 10px #fff3f21f,0 10px 17px #9456731c; }
+.cake-body:before { content: ''; position: absolute; left: 0; right: 0; bottom: 27px; height: 7px; background: #fff0dfb3; box-shadow: 0 3px 0 #b9718d30; }
+.cake-body > span { position: relative; font-size: 24px; letter-spacing: 5px; color: #914766; text-shadow: 0 1px #fff0ec88; }
+.cake-body > i { position: relative; margin-top: 0; color: #fff5dc; font-size: 17px; }
+.cake-piping { position: absolute; bottom: -5px; left: 8px; right: 8px; height: 12px; border-radius: 15px; background: radial-gradient(circle at 6px 5px,#fff1df 5px,#e9c4bb 6px,transparent 7px) 0 0/13px 12px repeat-x; }
+.cake-base { top: 188px; left: 2px; width: 266px; height: 27px; background: linear-gradient(#fffcf2 30%,#e9d4c4 65%,#c2a387); box-shadow: 0 10px 12px -7px #91677555; border: 1px solid #f1daca; z-index: -1; }
+.cake-base:after { content: ''; position: absolute; width: 72px; height: 9px; background: #dfc8b4; border-radius: 0 0 50% 50%; left: 96px; top: 23px; }
+.cake-sparkles { position: absolute; inset: 0; pointer-events: none; color: #cb95a5; }
+.cake-sparkles i { position: absolute; font-style: normal; animation: cake-twinkle 2.8s ease-in-out infinite; }
+.cake-sparkles i:nth-child(1) { left: -5px; top: 90px; font-size: 26px; }
+.cake-sparkles i:nth-child(2) { right: -7px; top: 31px; font-size: 18px; animation-delay: -.9s; }
+.cake-sparkles i:nth-child(3) { right: 9px; bottom: -3px; font-size: 23px; animation-delay: -1.8s; }
+@keyframes cake-arrive { from { opacity: 0; translate: 0 20px; } to { opacity: 1; translate: 0 0; } }
+@keyframes cake-twinkle { 0%,100% { opacity: .25; scale: .8; } 50% { opacity: 1; scale: 1.1; } }
+@media (max-width:600px) and (max-height:650px) { .cake { transform: scale(.85); margin-top: 25px; margin-bottom: -32px; } }
+@media (prefers-reduced-motion: reduce) { .cake, .cake-sparkles i { animation: none; } }
+
+/* A consistent, readable type system. */
+body, button, .note p, .wish-status #wish-success span { font-family: "Nunito Sans", sans-serif; }
+h1, h2, .welcome h1, .heading h2, .final-screen h2 { font-family: "Fredoka", "Trebuchet MS", sans-serif; font-weight: 500; letter-spacing: -.6px; }
+h1:focus, h2:focus { outline: none; }
+.welcome h1 { font-size: clamp(48px,6.5vw,80px); font-weight: 600; line-height: 1.02; color: #765060; -webkit-text-stroke: 0; text-shadow: 0 3px 0 #ffffff; }
+.welcome h1 em { font-style: normal; font-weight: 600; color: #df718e; }
+em { font-style: normal; }
+.wordmark, .handwritten, .note .dear, .note .signature, .note-to, .photo-controls p, .birthday-signoff, .wish-status p, dialog > p { font-family: "Nunito Sans", sans-serif; font-style: normal; letter-spacing: 0; }
+.wordmark { font-size: 21px; font-weight: 800; }
+.handwritten { font-size: 17px; font-weight: 600; }
+.note .dear { font-size: 24px; font-weight: 800; }
+.note .signature { font-size: 18px; font-weight: 700; }
+.note-to { font-size: 16px; font-weight: 700; }
+.photo-controls p { font-size: 17px; font-weight: 600; }
+.birthday-signoff { font-size: 23px; font-weight: 800; }
+.wish-status p { font-size: 17px; line-height: 1.5; }
+.wish-status #wish-success { font-family: "Fredoka",sans-serif; font-size: 26px; }
+.cake-body > span { font-family: "Fredoka",sans-serif; font-weight: 500; font-size: 23px; letter-spacing: 4px; }
+.eyebrow { font-weight: 800; letter-spacing: 1.7px; }
+@media (max-width:600px) { .welcome h1 { font-size: clamp(43px,12vw,57px); letter-spacing: -1px; } .heading h2 { font-size: 30px; } .final-screen h2 { font-size: 35px; } .wordmark { font-size: 20px; } .note p { font-size: 14px; line-height: 1.65; } .note .signature { font-size: 17px; } .final-screen .handwritten { font-size: 16px; } .photo-controls p { font-size: 16px; } .birthday-signoff { font-size: 21px; } }
+@media (max-height:650px) { .note p { font-size: 13px; line-height: 1.5; } .note .dear { font-size: 22px; } .note .signature { font-size: 16px; } }
