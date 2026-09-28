@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff0ed" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:title" content="A birthday surprise for Riya ✨" />
+    <meta property="og:description" content="A little cake, a few memories, and a whole lot of birthday wishes." />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <meta
+      name="description"
+      content="A little birthday surprise for my best friend, Riya."
+    />
+    <title>Happy Birthday, Riya ✨</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+    <main class="birthday-app">
+      <header class="topbar">
+        <span class="wordmark">For Riya<span> ✧</span></span
+        ><button id="music-toggle" class="music-toggle" type="button" aria-label="Play birthday music" aria-pressed="false">♫ Play music</button>
+      </header>
+      <audio id="birthday-music" src="assets/audio/birthday-melody.wav" autoplay loop preload="auto"></audio>
+      <audio id="hindi-greeting" src="assets/audio/riya-hindi-greeting.wav" preload="auto"></audio>
+      <div class="stage">
+        <section class="screen welcome" aria-labelledby="welcome-title">
+          <div class="party-flags" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="floating-hearts" aria-hidden="true"><span>♥</span><span>♥</span><span>✦</span><span>♥</span><span>✦</span></div>
+          <div class="welcome-copy">
+            <span class="eyebrow">A LITTLE SURPRISE, JUST FOR YOU</span>
+            <h1 id="welcome-title">Happy<br /><em>Birthday!</em></h1>
+            <p>
+              Janamdin mubarak ho, Riya!<br />Har din khushiyon se bhara rahe. ✨
+            </p>
+            <span class="handwritten">Stay you. You're pretty great at it.</span>
+            <span class="name-pill">♥ &nbsp; Riya &nbsp; ♥</span>
+          </div>
+          <div class="portrait">
+            <img
+              src="assets/images/riya-1.png"
+              alt="Riya, the birthday girl"
+              fetchpriority="high"
+            /><span class="portrait-tag">BIRTHDAY GIRL ✦</span>
+          </div>
+          <span class="party-balloon" aria-hidden="true">✦</span>
+          <span class="party-smile" aria-hidden="true">☺</span>
+        </section>
+        <section class="screen cake-screen" aria-labelledby="cake-title" hidden>
+          <div class="heading">
+            <span class="eyebrow">FIRST, THE IMPORTANT PART</span>
+            <h2 id="cake-title">Make a wish, <em>BFF.</em></h2>
+            <p>Har candle par tap karke bujhao.</p>
+          </div>
+          <div class="cake" aria-label="Birthday cake with five candles">
+            <div id="candles" class="candles"></div>
+            <div class="icing"></div>
+            <div class="cake-body"><span>RIYA</span><i>✧ &nbsp; ✧ &nbsp; ✧</i></div>
+            <div class="cake-base"></div>
+          </div>
+          <div class="wish-status" aria-live="polite">
+            <p id="candle-hint">Aankhein band karo. Ek wish maango.</p>
+            <p id="wish-success" hidden>
+              Wish made! ✨<br /><span>I hope it comes true.</span>
+            </p>
+          </div>
+        </section>
+        <section class="screen message-screen" aria-labelledby="message-title" hidden>
+          <div class="heading">
+            <span class="eyebrow">NO LONG SPEECH. PROMISE.</span>
+            <h2 id="message-title">A little note <em>for you.</em></h2>
+          </div>
+          <article class="note">
+            <span class="note-star" aria-hidden="true">✧</span>
+            <span class="note-to">To you ♥</span>
+            <p class="dear">Dear Riya,</p>
+            <p>
+              Happy Birthday, meri BFF! Thank you for making ordinary days a little more
+              fun.
+            </p>
+            <p>
+              Bas yahi wish hai—tum khush raho, apne dreams poore karo, aur apna pagalpan
+              kabhi mat khona.
+            </p>
+            <p>
+              Here's to more laughs, random conversations and memories worth keeping.
+              Enjoy your day! ✨
+            </p>
+            <p class="signature">Your BFF, always.</p>
+          </article>
+        </section>
+        <section class="screen memory-screen" aria-labelledby="memory-title" hidden>
+          <div class="heading">
+            <span class="eyebrow">A FEW FAVOURITE FRAMES</span>
+            <h2 id="memory-title">Main character <em>energy.</em></h2>
+          </div>
+          <button
+            id="photo-open"
+            class="memory-photo"
+            aria-label="View photo full screen"
+          >
+            <img id="memory-image" src="assets/images/riya-1.png" alt="Riya" /><span
+              >VIEW PHOTO ↗</span
+            >
+          </button>
+          <div class="photo-controls">
+            <button id="photo-prev" aria-label="Previous photo">←</button>
+            <div>
+              <p id="photo-caption"></p>
+              <span id="photo-count" aria-live="polite"></span>
+            </div>
+            <button id="photo-next" aria-label="Next photo">→</button>
+          </div>
+        </section>
+        <section class="screen final-screen" aria-labelledby="final-title" hidden>
+          <span class="final-spark" aria-hidden="true">✧</span
+          ><span class="eyebrow">ONE LAST THING…</span>
+          <h2 id="final-title">
+            The world is better<br />with a friend <em>like you.</em>
+          </h2>
+          <p>
+            May this year bring you big wins, little joys,<br />peace of mind and plenty
+            of cake.
+          </p>
+          <div class="birthday-signoff">Happy Birthday, Riya! 🎂</div>
+          <span class="handwritten">Keep smiling. Keep being you.</span>
+        </section>
+      </div>
+      <nav class="navigation" aria-label="Birthday surprise navigation">
+        <button id="back" class="back" aria-label="Previous screen">← Back</button>
+        <div class="dots" id="step-dots" aria-label="Screen progress"></div>
+        <button id="next" class="next">Let's celebrate →</button>
+      </nav>
+    </main>
+    <dialog id="photo-dialog" aria-label="Photo of Riya">
+      <button id="close-photo" aria-label="Close photo">×</button
+      ><img id="full-photo" alt="Riya" />
+      <p>Just a little birthday spotlight. ✨</p>
+    </dialog>
+  </body>
+</html>
