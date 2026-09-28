@@ -26,7 +26,7 @@ const greeting = $("#hindi-greeting");
 const musicToggle = $("#music-toggle");
 music.volume = 0.3;
 greeting.volume = 0.85;
-let userPaused = false;
+let userPaused = true;
 let greetingFinished = false;
 function updateMusicButton() {
   const playing = !music.paused || !greeting.paused;
@@ -54,14 +54,8 @@ musicToggle.addEventListener("click", () => {
     startBirthdayAudio();
   }
 });
-function unlockAudio(event) {
-  if (event.target.closest("#music-toggle")) return;
-  if (event.type === "keydown" && !["Enter", " "].includes(event.key)) return;
-  startBirthdayAudio();
-}
-document.addEventListener("click", unlockAudio);
-document.addEventListener("keydown", unlockAudio);
-startBirthdayAudio();
+// Audio starts only through the music button.
+updateMusicButton();
 
 // Five clear screens, with one consistent Next / Back control.
 screens.forEach((_, index) => {
@@ -91,7 +85,6 @@ function showScreen(index, focus = true) {
 
 $("#back").addEventListener("click", () => showScreen(currentScreen - 1));
 $("#next").addEventListener("click", () => {
-  if (currentScreen === 0 && music.paused && !userPaused) startBirthdayAudio();
   if (currentScreen === screens.length - 1) replay();
   else showScreen(currentScreen + 1);
 });
