@@ -1,0 +1,7 @@
+{
+  "name": "riya-birthday",
+  "private": true,
+  "scripts": {
+    "build": "node build.cjs"
+  }
+}
